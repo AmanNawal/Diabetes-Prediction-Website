@@ -1,5 +1,16 @@
 # Diabetes-Prediction-Website
 
+## How to use
+
+* Open windows powershell 
+* ```pip install Flask```
+* Open the directory of the project in windows powershell OR Visual studio peroject terminal.
+* set up environment variable using ```$env:FLASK_APP = "main.py"```
+*  Turn on the debug mode ```$env:FLASK_DEBUG = "1" ```
+* Use command ```flask run```
+* copy the port number for ex: http://127.0.0.1:5000 from the terminal and paste it in a web browser
+
+
 
 ## Pre Existing Data
 
