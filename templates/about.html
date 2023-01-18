@@ -1,0 +1,196 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    About
+{% endblock %}
+  
+{% block head %}
+{{ super() }}
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+      <style>
+          body{
+              background-color: #212121;
+              color: beige;
+              
+          }
+          main{
+              margin: 10px;
+          }
+   
+        
+          .card{
+            transition: transform .2s; /* Animation */
+            
+          }
+          .card:hover{
+            transform: scale(1.1);
+            box-shadow: 8px 8px 5px 0 rgba(0, 0, 0, 602);
+          }
+       
+  
+      </style>
+{% endblock %}
+  
+    {% block content %}
+      <main role="main">
+  
+          <!-- Main jumbotron for a primary marketing message or call to action -->
+          <div class="jumbotron-fluid bg-secondary py-5">
+            <div class="container">
+              <h1 class="display-3">Hello, Users!</h1>
+              <p>Ancient manuscripts also divided sentences into paragraphs with line breaks (newline) followed by an initial at the beginning of the next paragraph. An initial is an oversized capital letter, sometimes outdented beyond the margin of the text. This style can be seen, for example, in the original Old English manuscript of Beowulf. Outdenting is still used in English typography, though not commonly.[2] Modern English typography usually indicates a new paragraph by indenting the first line. This style can be seen in the (handwritten) United States Constitution from 1787. For additional ornamentation, a hedera leaf or other symbol can be added to the inter-paragraph white space, or put in the indentation space.<br>
+              </p>
+              <p><a class="btn btn-primary btn-lg" href="#" role="button">GitHub»</a></p>
+            </div>
+          </div>
+    
+          <div class="container mt-5">
+            <!-- Example row of columns -->
+            <div class="row">
+              <div class="col-md-4">
+                  <!-- About tech used in the project-->
+                <h2>Front End</h2>
+                <p>This website uses Bootstrap CSS, HTML and some libraries for UI, which is mapped with python code for smooth transitioning between websites.</p>
+                <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
+              </div>
+              <div class="col-md-4">
+                <h2>Back End</h2>
+                <p>This project relies on Python (flask) for website routing, JavaScript for dynamic binding of web components and heroku for ML.</p>
+                <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
+              </div>
+              <div class="col-md-4">
+                <h2>Embedded System</h2>
+                <p>This website uses a ardino based device which is capable of finding the acetone concentration and body temperature of a person.</p>
+                <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
+              </div>
+            </div>
+    
+           
+    
+          </div> <!-- /container -->
+          <hr>
+          <div class="container my-5 text-center">
+              <div class="display-6">Acetone Concentration</div><br>
+              <iframe width="600px" height="350px" src="https://www.youtube.com/embed/r2tXTjb7EqU">
+              </iframe>
+          </div>
+  
+          <div class="container my-5">
+              <div class="blog-post">
+                  <h2 class="blog-post-title display-5">About Project</h2><br>
+  
+      
+                  <p>This blog post sum sociis natoque penatibus et magnint that's supportedum sociis natoque penatibus et magni typography, images, and code are all supported.</p>
+                
+                  <p>Cum sociis natoque penatibus et magnis <a href="#">dis parturient montes</a>, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.</p>
+                  <blockquote>
+                    <p>Curabitur blandit tempus porttitor. <strong>Nullam quis risus eget urna mollis</strong> ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                  </blockquote>
+                  <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+                  <h2>Heading</h2>
+                  <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+                  <h3>Sub-heading</h3>
+                  <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                
+                  <p>Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.</p>
+               
+                </div>
+          </div>
+          <hr>
+        
+         <div class="container" style="background: transparent;">
+          <div class="display-2">Developers</div><br>
+          <div class="card-group">
+            <div class="card bg-dark m-4" id="mridul">
+              <img class="card-img-top " src="https://picsum.photos/id/1/500/500" alt="Card image cap" >
+              <div class="card-body">
+                <h5 class="card-title">Mridul Semwal</h5>
+                <p class="card-text"> ML(Heroku), Backend (Python), Ardino</p>
+                 
+                  <div class="container">
+                    <div class="row">
+                      
+                      <div class="col">
+                        <a href="https://github.com/mridul123456" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                      <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                    </svg>
+                  </a>
+                    </div>
+                    
+                    </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card bg-dark m-4" id="sarthak">
+              <img class="card-img-top" src="https://picsum.photos/id/1/500/500" alt="Card image cap" >
+              <div class="card-body">
+                <h5 class="card-title">Sarthak Dangwal</h5>
+                <p class="card-text"> ML(Heroku), Backend (Python), Ardino</p>
+              
+                  <div class="container">
+                  
+                    <div class="row">
+                      
+                      <div class="col">
+                        <a href="https://github.com/sarthakdangwal17" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                      <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                    </svg>
+                  </a>
+                    </div>
+                    
+                    </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card bg-dark m-4 " id="aman">
+              <img class="card-img-top" src="https://picsum.photos/id/1/500/500" alt="Card image cap" >
+              <div class="card-body">
+                <h5 class="card-title">Aman Nawal</h5>
+                <p class="card-text">Front End (Boots Trap) Backend (Python), Ardino</p>
+                
+                  <div class="container">
+                    
+                    <div class="row">
+                      
+                      <div class="col">
+                        <a href="https://github.com/AmanNawal" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                      <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                    </svg>
+                  </a>
+                    </div>
+                   
+                    </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card bg-dark m-4 cardatt" id="abhishek">
+              <img class="card-img-top" src="https://picsum.photos/id/1/500/500" alt="Card image cap" >
+              <div class="card-body">
+                <h5 class="card-title">Abhishek Hatwal</h5>
+                <p class="card-text">Front End (Boots Trap), ML(Heroku)</p>
+              
+                <div class="container">
+                  
+                  <div class="row " >
+                    <div class="col" >
+                      <a href="https://github.com/abhishekhatwal" target="_blank" >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                  </svg>
+                </a>
+                  </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+         </div>
+         </div>
+        </main>
+    
+    {% endblock %}

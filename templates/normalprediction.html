@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+{% block title %}
+    Home
+{% endblock %}
+
+
+{% block head %}
+  
+  {{ super() }}
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <style>
+        body{
+            
+            color: white;
+            overflow-x: hidden;
+            overflow-y: hidden;
+            height: 80%;
+            background: url('https://user-images.githubusercontent.com/74124514/212819236-ce3bf974-e465-4945-802b-e055210f8a18.jpg');
+            background-size: cover;
+            
+        }
+        .card{
+            
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            max-width: 700px;
+            background: rgba(0, 0, 0, 0.637);
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            
+            }
+        
+        
+        input, textarea, button{
+            padding: 8px 15px;
+            border-radius: 5px;
+            margin: 5px 0px;
+            box-sizing: border-box;
+            border: 1px solid #86817C;
+            background-color: rgba(0, 0, 0, 0.123);
+            font-size: 18px;
+            font-weight: 300;
+            color: white;
+        }
+        input:focus{
+            opacity:0.5;
+        }
+
+    </style>
+    {% endblock %}
+  
+    {% block content %}
+  
+    <div class="container-fluid px-1 py-3 mx-auto" id="cardcontainer">
+        
+        <div class="row d-flex justify-content-center">
+           
+            <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center" i>
+                
+                <div class="card" id="formcard">
+                    <form class="form-card" autocomplete="off" onsubmit="event.preventDefault()">
+                        <div class="row justify-content-between text-left">
+                            <div class="form-group col-sm-6 flex-column d-flex"> 
+                                <label class="form-control-label px-3">Pregnancies
+                                <span class="text-danger"> *</span>
+                            </label> 
+                            <input type="text" id="fname" name="fname" placeholder="Number of Pregnancies eg. 0" >
+                         </div>
+
+                            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Glucose<span class="text-danger"> *</span></label> <input type="text" id="lname" name="lname" placeholder="Glucose (mg/dL) eg. 80" > </div>
+                        </div>
+                
+
+                        <div class="row justify-content-between text-left">
+                            <div class="form-group col-sm-6 flex-column d-flex"> 
+                                <label class="form-control-label px-3">Blood Pressure
+                                <span class="text-danger"> *</span>
+                            </label> 
+                            <input type="text" id="fname" name="fname" placeholder="Blood Pressure (mmHg) eg. 80" > 
+                        </div>
+                            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">BMI<span class="text-danger"> *</span></label> <input type="text" id="lname" name="lname" placeholder="Body Mass Index (kg/m²) eg. 23.1" > </div>
+                        </div>
+                        <div class="row justify-content-between text-left">
+                            <div class="form-group col-sm-6 flex-column d-flex"> 
+                                <label class="form-control-label px-3">Skin Thickness
+                                <span class="text-danger"> *</span>
+                            </label> 
+                            <input type="text" id="fname" name="fname" placeholder="Skin Thickness (mm) eg. 20" > 
+                        </div>
+                            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Diabetes Pedigree Function<span class="text-danger"> *</span></label> <input type="text" id="lname" name="lname" placeholder="Diabetes Pedigree Function eg. 0.52" > </div>
+                        </div>
+                        <div class="row justify-content-between text-left">
+                            <div class="form-group col-sm-6 flex-column d-flex"> 
+                                <label class="form-control-label px-3">Insulin Level
+                                <span class="text-danger"> *</span>
+                            </label> 
+                            <input type="text" id="fname" name="fname" placeholder="Insulin Level" > 
+                        </div>
+                            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Age<span class="text-danger"> *</span></label> <input type="text" id="lname" name="lname" placeholder="Age" > </div>
+                        </div>
+
+                        <div class="row mx-5">
+                             <button type="submit" class="btn btn-primary" onclick="isUserLoggedIn(event)">Predict</button> 
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}

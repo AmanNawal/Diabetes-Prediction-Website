@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Title</title>
+  
+  </head>
+  <body>
+    <!--  Toast-->
+    <div class="container">
+      <div class="row">
+          <div class="col-12">
+              <button class="btn btn-success" onclick="Toasty()">Toast Me UPPPP</button>
+              
+              <div class="toast align-items-center text-white border-0" role="alert"
+               aria-live="assertive" aria-atomic="true" style="position: absolute; top: 20px; right: 20px;" id="textchange">
+                <div class="d-flex">
+                  <div class="toast-body" >
+                    Hello, world! This is a toast message.
+                  </div>
+                  <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script>
+    
+
+
+
+      function Toasty( )
+      {
+            var option = {animation : true ,delay : 4000};
+          var toastHTMLElement = document.getElementById( 'textchange' );
+          toastHTMLElement.style.backgroundColor='#dc3545'
+
+          var toastElement = new bootstrap.Toast( toastHTMLElement, option );
+          
+          toastElement.show( );
+      }
+     
+
+      function changeColor()
+        {
+          colorelement=document.getElementById('textchange')
+          colorelement.style.backgroundColor='#212121'
+          Toasty()
+
+        }
+
+      
+      
+      
+  </script>
+  </body>
+</html>
