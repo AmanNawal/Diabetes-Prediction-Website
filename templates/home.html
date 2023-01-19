@@ -12,8 +12,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!--Carousel Libraries Using CDN -->
     
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
     
 
@@ -22,7 +22,7 @@
     <style>
     .carousal-item{
           height: 32rem;
-          background: #777;
+          background: transparent;
           color: white;
           position: relative;
         }
@@ -52,7 +52,7 @@
   
 {% block content %}
     
-
+<script src="{{url_for('static', filename='home.js')}}"></script>
 
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="margin: 40px 40px 25px 40px;">
   <ol class="carousel-indicators">
@@ -101,11 +101,9 @@
           </h2>
           <p class="lead">Checks acetone concentration and body temperature of a person to conclude if the patient is diabetic or not.</p>
         <br>
-      <a href="{{ url_for('predictAcetone') }}">
-        <button class="btn btn-primary btn-lg">Test Acetone Level</button>
-      </a>
-       
-
+      
+        <button class="btn btn-primary btn-lg" onclick="navigateToAcetone(event)">Test Acetone Level</button>
+      
       </div>
         <div class="col ms-5" style="height: 300px;">
           <a href="https://user-images.githubusercontent.com/74124514/210203874-b3c91086-1170-4bef-acc4-e3de223764eb.png" target="_blank">
@@ -129,10 +127,10 @@
           <p class="lead">Uses BMI, Glucose, Blood Pressure, Insulin, Pregnancies and some other tests for checking the checking the patients.</p>
         
         <br>
-        <a href="{{ url_for('normalPrediction') }}">
-          <button class="btn btn-primary btn-lg">Predict</button>
+        
+          <button class="btn btn-primary btn-lg" onclick="navigateToPrediction(event)">Predict</button>
 
-        </a>
+       
         </div>
         
       </div>

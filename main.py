@@ -38,7 +38,7 @@ def navigation():
 def predictAcetone():
     return render_template("acetone.html")
 
-@app.route("/predict")
+@app.route("/normalprediction")
 def normalPrediction():
     return render_template("normalprediction.html")
 
