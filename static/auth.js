@@ -22,7 +22,7 @@ function toastStyling(toastHTMLElement)
 
 async function toastVisible(message,toastcolor)
 {
-    var option = {animation : true ,delay : 3000};
+    var option = {animation : true ,delay : 4000};
     var toastHTMLElement = document.getElementById( 'EpicToast' );
     toastHTMLElement.style.display='block'
     toastStyling(toastHTMLElement)

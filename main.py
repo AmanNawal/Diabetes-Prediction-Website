@@ -42,5 +42,9 @@ def predictAcetone():
 def normalPrediction():
     return render_template("normalprediction.html")
 
+@app.route("/device")
+def iotDevice():
+    return render_template("device.html")
+
 
 
