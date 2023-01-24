@@ -5,7 +5,7 @@ function navigateToAcetone(e){
     var user=firebase.auth().currentUser
     if(user)
     {
-        window.location.replace("./acetone")
+        window.location="./acetone"
     }
     else
     {
@@ -20,7 +20,7 @@ function navigateToPrediction(e){
     var user=firebase.auth().currentUser
     if(user)
     {
-        window.location.replace("./normalprediction")
+        window.location="./normalprediction"
     }
     else
     {
