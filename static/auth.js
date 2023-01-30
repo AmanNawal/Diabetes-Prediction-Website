@@ -73,7 +73,7 @@ function isUserLoggedIn(e)
     var user=firebase.auth().currentUser
     if(user)
     {
-        alert("PREDICT DIABETES")
+        
     }
     else
     {

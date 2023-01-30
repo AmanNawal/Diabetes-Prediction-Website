@@ -1,0 +1,130 @@
+{% extends 'base.html' %}
+{% block title %}
+    Result
+{% endblock %}
+
+{% block head %}
+{{ super() }}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+<style>
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.wrapper{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height:500px;
+  width:600px;
+  background: rgba(0, 0, 0, 0.637);
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(122, 120, 120, 0.3);
+}
+
+
+
+
+
+</style>
+
+
+{% endblock %}
+
+
+{% block content %}
+
+
+
+<div class="results">
+    {% if user_prediction==1 %}
+       <div class="wrapper">
+       
+        <div class="title">
+            <h2 class="display-6" style="text-align: center;margin: 10px 20px 20px 20px;color: brown;">You have Diabetes!</h2>
+          </div>
+          <div class="contact-form">
+            <ul>
+                <li>Your data shows that, it is possible you have diabetes.</li><br>
+                <li>The Acetone concentration, BMI and the body temperature highly points towards diabetic states.</li><br>
+                <li>Please consult a doctor as soon as possible.</li><br>
+                <div class="container" >
+                    <h4>Data provided:</h4><br>
+                    <div class="row my-3">
+                        <div class="col">
+                            <i>Acetone:     {{user_acetone}}</i>
+                        </div>
+                        <div class="col"><i>Body temperature:   {{user_temp}}</i></div>
+                    </div>
+                    <div class="row my-3">
+                        <div class="col">
+                            <i>Height:     {{user_height}}</i>
+                        </div>
+                        <div class="col"><i>Weight:     {{user_weight}}</i></div>
+                    </div>
+                    <div class="row my-3">
+                        <div class="col">
+                            <i>Age:     {{user_age}}</i>
+                        </div>
+                        <div class="col"><i>BMI:    {{user_bmi}}</i></div>
+                    </div>
+                   
+
+                </div>
+                
+
+            </ul>
+
+          </div>
+       </div>
+    {% elif user_prediction==0 %}
+    <div class="wrapper">
+       
+        <div class="title">
+            <h2 class="display-6" style="text-align: center;margin: 10px 20px 20px 20px;color: green;">You do not have Diabetes!</h2>
+          </div>
+          <div class="contact-form">
+            <ul>
+                <li>Your data shows that you don't possess diabetes right now.</li><br>
+                <li>The Acetone concentration, BMI and the body temperature are completely fine according to your body type.</li><br>
+                <li>To maintain current state avoid intake of sugar and other trans fat products.</li><br>
+                <div class="container" >
+                    <h4>Data provided:</h4><br>
+                    <div class="row my-3">
+                        <div class="col">
+                            <i>Acetone:     {{user_acetone}}</i>
+                        </div>
+                        <div class="col"><i>Body temperature:   {{user_temp}}</i></div>
+                    </div>
+                    <div class="row my-3">
+                        <div class="col">
+                            <i>Height:     {{user_height}}</i>
+                        </div>
+                        <div class="col"><i>Weight:     {{user_weight}}</i></div>
+                    </div>
+                    <div class="row my-3">
+                        <div class="col">
+                            <i>Age:     {{user_age}}</i>
+                        </div>
+                        <div class="col"><i>BMI:    {{user_bmi}}</i></div>
+                    </div>
+                   
+
+                </div>
+                
+
+            </ul>
+
+          </div>
+       </div>
+    {% endif %}
+</div>
+  
+{% endblock %}

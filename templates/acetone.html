@@ -109,21 +109,21 @@ body{
         <div class="title">
           <h2 style="text-align: center;margin: 10px 20px 20px 20px;">Breath analysis for VOC</h2>
         </div>
-        <div class="contact-form">
+        <form class="contact-form" action="/predict" method="POST" autocomplete="off">
           <div class="input-fields">
-            <input type="text" class="input" placeholder="Height">
-            <input type="text" class="input" placeholder="Acetone">
-            <input type="text" class="input" placeholder="Body Temperature">
-            <input type="text" class="input" placeholder="Age">
+            <input type="text" class="input" placeholder="Height" name="height" required="">
+            <input type="text" class="input" placeholder="Acetone" name="acetone" required="">
+            <input type="text" class="input" placeholder="Body Temperature" name="temperature" required="">
+            <input type="text" class="input" placeholder="Age" name="age" required="">
           </div>
           
           <div class="input-fields">
-            <input type="text" class="input" placeholder="Weight">
-            <input type="text" class="input" placeholder="Pregnancies">
+            <input type="text" class="input" placeholder="Weight" name="weight" required="">
+            <input type="text" class="input" placeholder="BMI" name="bmi" required="">
             <button class="btn btn-primary btn-sm" id="predictbutton" onclick="isUserLoggedIn(event)" style="margin-top: 70px; margin-left: 30px;margin-right: 30px;">Predict</button>
 
           </div>
-        </div>
+        </form>
        
       </div>
 
