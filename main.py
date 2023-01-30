@@ -249,4 +249,8 @@ def normalSubmit():
         ,seven="Pedigree Function: "+str(pedigreefunction),eight="Age: "+str(age)) 
 
 
+if __name__ == '__main__':
+	app.run(debug=True)
+
+
 
