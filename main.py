@@ -96,33 +96,48 @@ class SVM_classifier():
     return y_hat
 
 
-#-------------------------------------------------------------------------------------------------------------------------------------
-
+#----------------------------------------------------- ACETONE TRAINING------------------------------------------------------------------------------
 
   #loading the diabetes dataset to pandas dataframe
 diabetes_dataset=pd.read_csv('diabetes.csv')
-
-
 #Separating data and labels
 X=diabetes_dataset.drop(columns='Outcome',axis=1)
 Y=diabetes_dataset['Outcome']
-
 #-----------------Data standardization---------------------------------
-
 scaler=StandardScaler()
 scaler.fit(X)
 standarized_data=scaler.transform(X)
 X=standarized_data
 Y=diabetes_dataset['Outcome']
-
 #----------------splitting the data-----------------------------------
-
 X_train,X_test,Y_train,Y_test=train_test_split(X,Y , test_size=0.2,stratify=Y,random_state=2)
 classifier = SVM_classifier(learning_rate=0.001, no_of_iterations=1000, lambda_parameter = 0.01)
-
 #Training the Support Vector Machine Classifier
 classifier.fit(X_train,Y_train)
 
+#--------------------------------------ACETONE END-------------------------------------------------
+
+
+#------------------------------------------NORMAL PREDICTION------------------------------------------------------
+
+#loading the diabetes dataset to pandas dataframe
+normal_dataset=pd.read_csv('kaggle_diabetes.csv')
+
+#Separating data and labels
+normal_X=normal_dataset.drop(columns='Outcome',axis=1)
+normal_Y=normal_dataset['Outcome']
+normal_scaler=StandardScaler()
+normal_scaler.fit(normal_X)
+normal_standarized_data=normal_scaler.transform(normal_X)
+normal_X=normal_standarized_data
+normal_Y=normal_dataset['Outcome']
+normal_X_train,normal_X_test,normal_Y_train,normal_Y_test=train_test_split(normal_X,normal_Y , test_size=0.2,stratify=normal_Y,random_state=2)
+normal_classifier = SVM_classifier(learning_rate=0.001, no_of_iterations=1000, lambda_parameter = 0.01)
+
+normal_classifier.fit(normal_X_train,normal_Y_train)
+
+
+#--------------------------------------------------------------------------------------------------------------
 
 
 
@@ -179,7 +194,6 @@ def acetoneSubmit():
         age=float(request.form["age"])
         weight=float(request.form["weight"])
         BMI=float(request.form["bmi"])
-        print("height: {}\n acetone: {} \nbody temperature: {}\nAge: {}\nWeight: {}\nBMI: {}\n ".format(height,acetone,bodytemp,age,weight,BMI))
 
       
 
@@ -199,12 +213,40 @@ def acetoneSubmit():
 
         prediction=classifier.predict(std_data)
 
-   
+    return render_template('result.html',user_prediction=prediction,user_acetone="Acetone: "+str(acetone),
+    user_temp="Body Temperature: "+str(bodytemp),user_height="Height: "+str(height),
+    user_age="Age: "+str(age),user_weight="Weight: "+str(weight),user_bmi="BMI: "+str(BMI)) 
 
 
-    return render_template('result.html',user_prediction=prediction,user_acetone=str(acetone),user_temp=str(bodytemp),user_height=str(height),user_age=str(age),user_weight=str(weight),user_bmi=str(BMI)) 
+@app.route("/predict2",methods=['POST'])
+def normalSubmit():
+    if request.method=="POST":
+        pregnancies=float(request.form["pregnancies"])
+        glucose=float(request.form["glucose"])
+        bloodpressure=float(request.form["bloodpressure"])
+        skinthickness=float(request.form["skinthickness"])
+        insulinlevel=float(request.form["insulinlevel"])
+        bmi=float(request.form["bmi"])
+        pedigreefunction=float(request.form["predigreefunction"])
+        age=float(request.form["age"])
+        #------------------------------PREDICTION------------------------------------
 
+        input_data=(pregnancies,glucose,bloodpressure,skinthickness,insulinlevel,bmi,pedigreefunction,age)
+        print(input_data)
+        input_data_as_numpy_array=np.asarray(input_data)
 
+        #reshape the array as we are predicting for one instance
+        input_data_reshaped=input_data_as_numpy_array.reshape(1,-1)
+
+        #standardize the input data
+        std_data=normal_scaler.transform(input_data_reshaped)
+       
+
+        prediction=normal_classifier.predict(std_data)
+        return render_template('result.html',user_prediction=prediction,user_acetone="Pregnancies: "+str(pregnancies),
+        user_temp="Glucose: "+str(glucose),user_height="Blood Pressure: "+str(bloodpressure),
+        user_age="Skin Thickness: "+str(skinthickness),user_weight="Insulin level: "+str(insulinlevel),user_bmi="BMI: "+str(bmi)
+        ,seven="Pedigree Function: "+str(pedigreefunction),eight="Age: "+str(age)) 
 
 
 
